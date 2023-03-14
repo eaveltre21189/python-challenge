@@ -29,7 +29,7 @@ with open(election_csv) as csv_file:
             cand_votes[candidate] = 1
         cand_votes[candidate] = cand_votes[candidate] + 1
 
-# Write data analysis to terminal new text file
+# Print data analysis to terminal and write to new text file
 with open(output_path, 'w') as file:
     print("Election Results")
     print("-------------------------")
@@ -49,11 +49,11 @@ with open(output_path, 'w') as file:
             ballot_count = cand_total
             winner = candidate
         
-        # Print candidate data and winner to terminal/output file
+        # Print candidate data and winner to terminal/write to output file
         print(f"{candidate}: {percent_votes:.3f}% ({cand_total - 1})")
         file.write(f"{candidate}: {percent_votes:.3f}% ({cand_total - 1})\n")
     
-    # Continue printing/writing to output file
+    # Continue printing to terminal/writing to output file
     print("-------------------------")
     print(f"Winner: {winner}")
     print("-------------------------")  
